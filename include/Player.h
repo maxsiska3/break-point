@@ -37,10 +37,10 @@ public:
     void setOutfit(string outfit);
 
     // Mutators
-    void recordMatchResult(bool won);
-    void applyFatigue(int amount);
-    void recover();
-    void display() const;
+    void recordMatchResult(bool won); // Win/Lose
+    void applyFatigue(int amount); // Lowers speed and slows hits as a result of stamina being consumed
+    void recover(); // Recovers stamina
+    void display() const; // Dislays all player info 
 
 private:
     string name;
