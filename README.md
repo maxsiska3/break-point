@@ -1,6 +1,6 @@
 # Break Point
 
-A tennis game module built in C++ with SFML graphics, developed as part of the AIWars game project for COP4530 Data Structures at Florida State University.
+A tennis game module built in C++ with SFML graphics.
 
 ## Overview
 
@@ -46,7 +46,3 @@ Integrates all modules and drives the SFML rendering loop.
 
 - C++17
 - [SFML](https://www.sfml-dev.org/)
-
-## Course
-
-COP4530 — Data Structures and Algorithms, Florida State University
