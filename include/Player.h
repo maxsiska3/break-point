@@ -30,6 +30,8 @@ public:
     PlayerStats getStats() const;
     string getRacket() const;
     string getOutfit() const;
+    float getX() const; 
+    float getY() const;
 
     // Setters
     void setRanking(int ranking);
@@ -41,8 +43,11 @@ public:
     void applyFatigue(int amount); // Lowers speed and slows hits as a result of stamina being consumed
     void recover(); // Recovers stamina
     void display() const; // Dislays all player info 
+    void move(float dx, float dy); // Moves the player on the court
 
 private:
+    float x;
+    float y;
     string name;
     string gender;
     int ranking;
