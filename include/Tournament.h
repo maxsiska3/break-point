@@ -2,8 +2,14 @@
 #define TOURNAMENT_H
 
 #include "Player.h"
-using namespace std;
 
+/*
+ * Tournament — An ADT binary tree representing a single-elimination bracket
+ * where each node is a match.
+ *
+ * Leaves hold the first-round matchups and winners advance up toward the root.
+ * The root node holds the champion once all matches are played.
+ */
 class Tournament
 {
 public:
@@ -16,19 +22,33 @@ public:
         BinaryNode() : winner(nullptr), left(nullptr), right(nullptr) {}
     };
 
+    // Constructors
+
+    // Initializes an empty tournament
     Tournament();
 
     // Mutators
-    void addPlayer(Player p); // Adds player to the tree
-    void advanceWinner(Player winner); // Advances player up tree
-    void display() const; // Displays bracket
-    void reset(); // Clears tree
 
-    Player* getChampion() const; // Returns the champion of tournament
+    // Adds a player to the next open spot in the bracket
+    void addPlayer(Player p);
+
+    // Moves the winner of a match up to the parent node
+    void advanceWinner(Player winner);
+
+    // Prints the full bracket to the console
+    void display() const;
+
+    // Clears the tree and resets the tournament
+    void reset();
+
+    // Getters
+
+    // Returns the winner stored at the root node
+    Player* getChampion() const;
 
 private:
     BinaryNode* root;
-    string tournamentName;
+    std::string tournamentName;
     int numPlayers;
 };
 
