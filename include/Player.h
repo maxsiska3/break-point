@@ -18,7 +18,7 @@ public:
 
     // Constructors
     Player();
-    Player(string name, string gender, int ranking, PlayerStats stats, string racket, string outfit);
+    Player(string name, string gender, PlayerStats stats);
 
     // Getters
     string getName() const;
