@@ -17,10 +17,18 @@ enum class CourtSide
 /*
  * Match — A state machine that processes a queue of Point outcomes to advance
  * score through the tennis scoring hierarchy: points → games → sets → tiebreaks.
- * 
+ *
  * Points are enqueued as they occur, then processed sequentially. Each point
  * may trigger a game win, which may trigger a set win, which may end the match.
  * Tiebreaks are automatically entered at 6-6 in any set.
+ *
+ * Most Expensive ADT — O(n):
+ * Match is the most expensive ADT in the system. processAllPoints() runs in
+ * O(n) where n is the number of points in the queue. Each call to processNextPoint()
+ * is O(1) on its own, but it cascades through awardPoint() → awardGame() → awardSet()
+ * which all fire in sequence. Over a full match with hundreds of points, this chain
+ * makes Match the most computationally intensive structure. All other ADTs
+ * (BallPhysics, Player, Tournament, Leaderboard) operate in O(1) or O(log n).
  */
 class Match
 {
