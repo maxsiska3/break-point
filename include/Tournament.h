@@ -9,6 +9,15 @@
  *
  * Leaves hold the first-round matchups and winners advance up toward the root.
  * The root node holds the champion once all matches are played.
+ *
+ * Time Complexity:
+ * addPlayer()     — O(n): requires a level-order traversal to find the next
+ *                   open leaf in the bracket across all n nodes.
+ * advanceWinner() — O(n): must traverse the tree to locate the correct node
+ *                   to update with the winner.
+ * display()       — O(n): visits every node in the tree to print the bracket.
+ * reset()         — O(n): must visit and delete every node to free memory.
+ * getChampion()   — O(1): simply returns root->winner.
  */
 class Tournament
 {
